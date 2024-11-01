@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import { Github, Linkedin } from "lucide-react";
-import HexagonGrid from "../components/HexagonGrid";
+import { FileDown, Github, Linkedin } from "lucide-react";
+import HexagonGrid from "./components/HexagonGrid";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
   useEffect(() => {
     const updateColumnCount = () => {
       const screenWidth = window.innerWidth;
-      const needed = Math.ceil((screenWidth * 1.5) / (width * 0.75)) + 4;
+      const needed = Math.ceil((screenWidth * 2) / (width * 0.75)) + 4;
       setColumnCount(needed);
     };
 
@@ -30,169 +30,161 @@ export default function Home() {
           inset: 0,
           overflow: "hidden",
           zIndex: 1,
-          top: "-10%",
-          height: "80vh", // Added height limit
+          top: "0",
+          height: "100vh", // Added height limit
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <HexagonGrid columnCount={columnCount} size={size} />
       </div>
-      {/* Change bg-gray-900 to bg-black */}
-      {/* Header */}
-      <header className="py-6 px-4 flex justify-between items-center bg-black">
-        <div className="flex items-center space-x-2">
-          <Image
-            src="/10.png" // This should be the same image path you're using in the About section
-            alt="Profile"
-            width={60} // Smaller size for the header
-            height={60} // Smaller size for the header
-            className="rounded-full" // Makes the image circular like your larger one
-          />
-          <div className="text-xl font-bold text-green">Springbock99</div>
-        </div>
-        <nav>
-          <ul className="flex space-x-4">
-            <li>
-              <a href="#" className="text-green hover:text-white">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-green hover:text-white">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-green hover:text-white">
-                Portfolio
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-green hover:text-white">
-                Blog
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-green hover:text-white">
-                Contact
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      {/* Introduction Section */}
-      <section className="flex flex-col items-start px-20 py-20">
-        <div className="flex flex-col ml-[17%]">
-          <div className="flex items-center space-x-6">
-            <h1 className="text-5xl font-bold text-green">Kent Daneel</h1>
-            <div className="flex space-x-4 items-center">
-              <a
-                href="https://github.com/Springbock99"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-green hover:text-white transition-colors"
-              >
-                <Github size={32} />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/kent-daneel-7639832a7/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-green hover:text-white transition-colors"
-              >
-                <Linkedin size={32} />
-              </a>
-            </div>
+      <div style={{ position: "relative", zIndex: 2 }}>
+        {" "}
+        <header className="py-6 px-4 flex justify-between items-center bg-black">
+          <div className="flex items-center space-x-2">
+            <Image
+              src="/KW.png" // This should be the same image path you're using in the About section
+              alt="Profile"
+              width={80} // Smaller size for the header
+              height={80} // Smaller size for the header
+              className="rounded-full" // Makes the image circular like your larger one
+            />
           </div>
-          <p className="mt-2">
-            A Blockchain Developer deeply involved in Distributed Ledger
-            Technologies. Specializing in smart contract development, I am
-            experienced in Solidity, Typescript, Foundry and other essential
-            technologies that are critical to innovative blockchain solutions.
-          </p>
-        </div>
-      </section>
-      {/* About Me Section */}
-      <section className="flex flex-col md:flex-row items-center justify-center py-20 px-4">
-        <Image
-          src="/10.png" // Ensure this image is in the public folder
-          alt="Your Name"
-          width={200}
-          height={200}
-          className="rounded-full shadow-lg md:mr-8"
-        />
-        <div className="md:max-w-md">
-          <h2 className="text-2xl font-bold">About Me</h2>
-          <section
-            className="flex justify-center py-20 px-4"
-            style={{ width: "500px", height: "500px" }}
-          >
-            <div className="w-full max-w-10xl">
-              <div className="relative pt-[56.25%] bg-gray-800 rounded-lg shadow-lg width=500px height=1000px">
-                <video
-                  className="absolute top-0 left-0 w-full h-full rounded-lg"
-                  height="500"
-                  width="500"
-                  controls
+          <nav>
+            <ul className="flex space-x-4">
+              <li>
+                <a
+                  href="/projects"
+                  className="text-lg text-green hover:text-white"
                 >
-                  <source src="/IMG_8136.MP4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                  Projects
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-lg text-green hover:text-white">
+                  About Me
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-lg text-green hover:text-white">
+                  Blog
+                </a>
+              </li>
+              <li className="ml-6">
+                <a
+                  href="https://calendly.com/daneelkent"
+                  target="_blank" // Opens in new tab
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
+               hover:border-green/50 transition-colors backdrop-blur-sm 
+               text-green hover:text-white"
+                >
+                  Book a Meeting
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        {/* Introduction Section */}
+        <section className="flex flex-col items-start px-20 py-10">
+          <div className="flex flex-col ml-[17%]">
+            <div className="flex items-center space-x-6">
+              <div className="rounded-full p-[3px] bg-green shadow-lg shadow-green/50">
+                <Image
+                  src="/StaffH.png"
+                  alt="Profile"
+                  width={120}
+                  height={120}
+                  className="rounded-full"
+                />
+              </div>
+              <h1 className="text-5xl font-bold text-green">Kent Daneel</h1>
+              <div className="flex space-x-4 items-center">
+                <a
+                  href="https://github.com/Springbock99"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green hover:text-white transition-colors"
+                >
+                  <Github size={32} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/kent-daneel-7639832a7/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green hover:text-white transition-colors"
+                >
+                  <Linkedin size={32} />
+                </a>
+                <a
+                  href="/KentDaneelResume.pdf" // Make sure to put your CV PDF in the public folder
+                  download
+                  className="text-green hover:text-white transition-colors"
+                  title="Download CV"
+                >
+                  <FileDown size={32} />
+                </a>
               </div>
             </div>
-          </section>
-          {/* <p className="mt-2">
-            Hi There! Im Edward Davis, a Visual Designer with a focus on digital
-            branding. I design websites, logos, and create promotional pieces to
-            respond to messages, while also aiming to make a favorable impact.
-          </p>
-          <p className="mt-4">
-            <strong>Birthday:</strong> May 30, 1980 <br />
-            <strong>Email:</strong> edwarddavis@email.com <br />
-            <strong>Language:</strong> English, German <br />
-            <strong>Freelance:</strong> Available
-          </p> */}
-          <button className="mt-4 px-4 py-2 bg-blue-600 rounded hover:bg-blue-700">
-            Download CV
-          </button>
-        </div>
-      </section>
-      {/* Services Section */}
-      <section className="py-20 px-4">
-        <h2 className="text-3xl font-bold text-center">Services</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
-          {/* Repeat this block for each service */}
-          <div className="p-6 bg-gray-800 rounded-lg">
-            <h3 className="text-xl font-semibold">Sketches</h3>
-            <p className="mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            <p className="text-lg mt-2">
+              A Blockchain Developer deeply involved in Distributed Ledger
+              Technologies. Specializing in smart contract development, I am
+              experienced in Solidity, Typescript, Foundry and other essential
+              technologies that are critical to innovative blockchain solutions.
             </p>
           </div>
-          <div className="p-6 bg-gray-800 rounded-lg">
-            <h3 className="text-xl font-semibold">UI/UX Design</h3>
-            <p className="mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
+        </section>
+        <div className="h-80"></div> {/* This adds 5rem (80px) of space */}
+        <section className="py-10 px-20">
+          {" "}
+          {/* Match the padding with introduction section */}
+          <div className="ml-[17%]">
+            {" "}
+            {/* Match the margin with introduction section */}
+            <h2 className="text-3xl font-bold text-green mb-6">Services</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+              {" "}
+              {/* Changed to 2 columns */}
+              {/* Service boxes with updated styling */}
+              <div className="p-6 bg-gray-900/50 rounded-lg border border-green/20 hover:border-green/50 transition-colors backdrop-blur-sm">
+                <h3 className="text-xl font-semibold text-green">
+                  Smart Contract Development
+                </h3>
+                <p className="mt-2 text-gray-300">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+              </div>
+              <div className="p-6 bg-gray-900/50 rounded-lg border border-green/20 hover:border-green/50 transition-colors backdrop-blur-sm">
+                <h3 className="text-xl font-semibold text-green">
+                  DeFi Solutions
+                </h3>
+                <p className="mt-2 text-gray-300">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+              </div>
+              <div className="p-6 bg-gray-900/50 rounded-lg border border-green/20 hover:border-green/50 transition-colors backdrop-blur-sm">
+                <h3 className="text-xl font-semibold text-green">
+                  Blockchain Consulting
+                </h3>
+                <p className="mt-2 text-gray-300">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+              </div>
+              <div className="p-6 bg-gray-900/50 rounded-lg border border-green/20 hover:border-green/50 transition-colors backdrop-blur-sm">
+                <h3 className="text-xl font-semibold text-green">
+                  Web3 Integration
+                </h3>
+                <p className="mt-2 text-gray-300">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="p-6 bg-gray-800 rounded-lg">
-            <h3 className="text-xl font-semibold">Product Design</h3>
-            <p className="mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-          </div>
-          <div className="p-6 bg-gray-800 rounded-lg">
-            <h3 className="text-xl font-semibold">Motion Graphics</h3>
-            <p className="mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-          </div>
-        </div>
-      </section>
-      {/* Footer */}
-      <footer className="py-6 text-center bg-gray-800">
-        <p>
-          &copy; {new Date().getFullYear()} Springbock99. All Rights Reserved.
-        </p>
-      </footer>
+        </section>
+        {/* Footer */}
+      </div>
     </div>
   );
 }
