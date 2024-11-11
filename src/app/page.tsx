@@ -47,8 +47,8 @@ export default function Home() {
             <Image
               src="/KW.png" // This should be the same image path you're using in the About section
               alt="Profile"
-              width={80} // Smaller size for the header
-              height={80} // Smaller size for the header
+              width={100} // Smaller size for the header
+              height={100} // Smaller size for the header
               className="rounded-full" // Makes the image circular like your larger one
             />
           </div>
@@ -63,7 +63,10 @@ export default function Home() {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-lg text-green hover:text-white">
+                <a
+                  href="/aboutMe"
+                  className="text-lg text-green hover:text-white"
+                >
                   About Me
                 </a>
               </li>
@@ -128,6 +131,9 @@ export default function Home() {
                 </a>
               </div>
             </div>
+
+            <div className="h-10"></div>
+
             <p className="text-lg mt-2">
               A Blockchain Developer deeply involved in Distributed Ledger
               Technologies. Specializing in smart contract development, I am
@@ -146,14 +152,16 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-green mb-6">Services</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
               {" "}
-              {/* Changed to 2 columns */}
               {/* Service boxes with updated styling */}
               <div className="p-6 bg-gray-900/50 rounded-lg border border-green/20 hover:border-green/50 transition-colors backdrop-blur-sm">
                 <h3 className="text-xl font-semibold text-green">
-                  Smart Contract Development
+                  Blockchain Development
                 </h3>
                 <p className="mt-2 text-gray-300">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Experience in developing secure and efficient smart contracts,
+                  with focus on scalability and optimal gas optimization, with
+                  future upgradability in mind and sale guard against common
+                  exploits.
                 </p>
               </div>
               <div className="p-6 bg-gray-900/50 rounded-lg border border-green/20 hover:border-green/50 transition-colors backdrop-blur-sm">
@@ -165,19 +173,24 @@ export default function Home() {
                 </p>
               </div>
               <div className="p-6 bg-gray-900/50 rounded-lg border border-green/20 hover:border-green/50 transition-colors backdrop-blur-sm">
-                <h3 className="text-xl font-semibold text-green">
-                  Blockchain Consulting
-                </h3>
+                <h3 className="text-xl font-semibold text-green">Tech Stack</h3>
                 <p className="mt-2 text-gray-300">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Solidity, Typescript, Node.js, Rust, JavaScript, Ethers.js,
+                  Express.js, Remix, Hardhat, Foundry, Alchemy, ERC-20, ERC-721,
+                  ERC-1155,ERC-1167, Upgradeable Patterns, React, Next.js,
+                  Wagmi, MySQL, GraphQL
                 </p>
               </div>
               <div className="p-6 bg-gray-900/50 rounded-lg border border-green/20 hover:border-green/50 transition-colors backdrop-blur-sm">
                 <h3 className="text-xl font-semibold text-green">
-                  Web3 Integration
+                  Great Team Player
                 </h3>
                 <p className="mt-2 text-gray-300">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  As a former professional IceHockey player I am an absolute
+                  team player. Putting in the extra effort when needed and the
+                  ability to persevere have become natural aspects of my
+                  personality. In any work environment I support good
+                  communication and the ability to work towards a common goal.
                 </p>
               </div>
             </div>
