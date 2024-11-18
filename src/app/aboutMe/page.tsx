@@ -67,6 +67,16 @@ export default function About() {
               </li>
               <li>
                 <a
+                  href="/projects"
+                  className="text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
+                            hover:border-green/50 transition-colors backdrop-blur-sm 
+                            text-green hover:text-white"
+                >
+                  Projects
+                </a>
+              </li>
+              <li>
+                <a
                   href="#"
                   className="text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
                             hover:border-green/50 transition-colors backdrop-blur-sm 
@@ -145,9 +155,6 @@ export default function About() {
         {/* About Me Content */}
         <section className="px-20">
           <div className="ml-[17%] max-w-4xl">
-            <h2 className="text-2xl font-bold text-green mb-6">
-              Want To Get To Know Me?
-            </h2>
             <div className="relative pt-[56.25%] bg-gray-900/50 rounded-lg border border-green/20 backdrop-blur-sm">
               <video
                 className="absolute top-0 left-0 w-full h-full rounded-lg"
@@ -195,9 +202,23 @@ export default function About() {
         </section>
         {/* Footer */}
         <footer className="py-4 text-center bg-transparent border-t border-green/20 mt-20">
-          <p className="text-gray-400">
-            &copy; {new Date().getFullYear()} Springbock99. All Rights Reserved.
-          </p>
+          <div className="flex flex-col items-center space-y-4">
+            {" "}
+            {/* Added container for vertical alignment */}
+            <p className="text-xl text-green">
+              Don't hesitate to book a meeting with me!
+            </p>
+            <a
+              href="https://calendly.com/daneelkent"
+              target="_blank" // Opens in new tab
+              rel="noopener noreferrer"
+              className="text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
+               hover:border-green/50 transition-colors backdrop-blur-sm 
+               text-green hover:text-white"
+            >
+              Book a Meeting
+            </a>
+          </div>
         </footer>
       </div>
     </div>
