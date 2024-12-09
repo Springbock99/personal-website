@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ProjectBox } from "../components/ProjectBox";
 import HexagonGrid from "../components/HexagonGrid";
 import { useEffect, useState } from "react";
+import { FileDown, Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 
 export default function Projects() {
@@ -96,9 +97,73 @@ export default function Projects() {
       {/* Content */}
       <div style={{ position: "relative", zIndex: 2 }}>
         {/* Projects Title */}
-        <section className="px-20 py-10">
-          <div className="ml-[17%]">
-            <h1 className="text-5xl font-bold text-green mb-12">Projects</h1>
+        <section className="flex flex-col items-start px-20 py-10">
+          <div className="flex flex-col ml-[17%]">
+            <div className="flex items-center space-x-6">
+              <div className="rounded-full p-[3px] bg-green shadow-lg shadow-green/50">
+                <Image
+                  src="/StaffH.png"
+                  alt="Profile"
+                  width={140}
+                  height={140}
+                  className="rounded-full"
+                />
+              </div>
+              <h1 className="text-6xl font-bold text-green">
+                My Personal Projects
+              </h1>
+              <div className="flex space-x-4 items-center">
+                <a
+                  href="https://github.com/Springbock99"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green hover:text-white transition-colors"
+                >
+                  <Github size={32} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/kent-daneel-7639832a7/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green hover:text-white transition-colors"
+                >
+                  <Linkedin size={32} />
+                </a>
+                <a
+                  href="/KentDaneelResume.pdf" // Make sure to put your CV PDF in the public folder
+                  download
+                  className="text-green hover:text-white transition-colors"
+                  title="Download CV"
+                >
+                  <FileDown size={32} />
+                </a>
+              </div>
+            </div>
+
+            <div className="h-10"></div>
+
+            <p className="text-2xl mt-2">
+              Take a look at some of my favorite blockchain projects, from DeFi
+              protocols to NFT platforms
+            </p>
+            {/* <div className="flex space-x-4 mt-6"> */}
+            <ul className="flex space-x-2 mt-6 list-none">
+              <div className="h-10"></div>
+
+              <li className="ml-6">
+                <a
+                  href="https://calendly.com/daneelkent"
+                  target="_blank" // Opens in new tab
+                  rel="noopener noreferrer"
+                  className="text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
+               hover:border-green/50 transition-colors backdrop-blur-sm 
+               text-green hover:text-white"
+                >
+                  Book a Meeting
+                </a>
+              </li>
+            </ul>
+            {/* </div> */}
           </div>
         </section>
 
@@ -319,9 +384,23 @@ export default function Projects() {
 
         {/* Footer */}
         <footer className="py-4 text-center bg-transparent border-t border-green/20 mt-20">
-          <p className="text-gray-400">
-            &copy; {new Date().getFullYear()} Springbock99. All Rights Reserved.
-          </p>
+          <div className="flex flex-col items-center space-y-4">
+            {" "}
+            {/* Added container for vertical alignment */}
+            <p className="text-xl text-green">
+              Don't hesitate to book a meeting with me!
+            </p>
+            <a
+              href="https://calendly.com/daneelkent"
+              target="_blank" // Opens in new tab
+              rel="noopener noreferrer"
+              className="text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
+               hover:border-green/50 transition-colors backdrop-blur-sm 
+               text-green hover:text-white"
+            >
+              Book a Meeting
+            </a>
+          </div>
         </footer>
       </div>
     </div>
