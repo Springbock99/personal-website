@@ -204,9 +204,8 @@ export default function About() {
         <footer className="py-4 text-center bg-transparent border-t border-green/20 mt-20">
           <div className="flex flex-col items-center space-y-4">
             {" "}
-            {/* Added container for vertical alignment */}
             <p className="text-xl text-green">
-              Don't hesitate to book a meeting with me!
+              {"Don't hesitate to book a meeting with me!"}
             </p>
             <a
               href="https://calendly.com/daneelkent"

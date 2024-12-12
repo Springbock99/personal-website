@@ -99,44 +99,40 @@ export default function About() {
             </ul>
           </nav>
         </header>
-        {/* Introduction Section */}
-        <section className="flex flex-col items-start px-20 py-10"></section>
-        {/* About Me Content */}
-        <section className="px-20"></section>
-        <div className="ml-[17%] max-w-6xl">
+        <div className="h-[100px]"></div>
+        <main className="flex-1">
           {" "}
-          {/* Increased max-w-4xl to max-w-6xl */}
-          <div className="p-16 bg-gray-900/50 rounded-lg border border-green/20 backdrop-blur-sm text-center">
-            {" "}
-            {/* Increased padding from p-8 to p-16 */}
-            <h2 className="text-5xl font-bold text-green mb-8">Blog</h2>{" "}
-            {/* Increased text size */}
-            <h3 className="text-4xl font-semibold text-green mb-6 animate-pulse">
-              Coming Soon!
-            </h3>{" "}
-            {/* Added animation */}
-            <p className="text-2xl text-gray-300 mb-8">
-              My Medium articles will be integrated here shortly. Stay tuned for
-              blockchain insights and technical content.
-            </p>
+          {/* Added flex-1 to push footer down */}
+          <div className="px-20 py-10">
+            <div className="ml-[17%] max-w-6xl">
+              <div className="p-16 bg-gray-900/50 rounded-lg border border-green/20 backdrop-blur-sm text-center">
+                <h2 className="text-5xl font-bold text-green mb-8">Blog</h2>
+                <h3 className="text-4xl font-semibold text-green mb-6 animate-pulse">
+                  Coming Soon!
+                </h3>
+                <p className="text-2xl text-gray-300 mb-8">
+                  My Medium articles will be integrated here shortly. Stay tuned
+                  for blockchain insights and technical content.
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-        <section className="py-10 px-20"></section>
-        {/* Footer */}
-        <footer className="py-4 text-center bg-transparent border-t border-green/20 mt-20">
+        </main>
+        <div className="h-[550px]"></div>
+        <footer className="py-4 text-center border-t border-green/20 mt-20 bg-gray-900/50 backdrop-blur-sm">
+          {" "}
+          {/* Added background classes */}
           <div className="flex flex-col items-center space-y-4">
-            {" "}
-            {/* Added container for vertical alignment */}
-            <p className="text-xl text-green">
-              Don't hesitate to book a meeting with me!
+            <p className="text-2xl text-green">
+              {"Don't hesitate to book a meeting with me!"}
             </p>
             <a
               href="https://calendly.com/daneelkent"
-              target="_blank" // Opens in new tab
+              target="_blank"
               rel="noopener noreferrer"
               className="text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
-               hover:border-green/50 transition-colors backdrop-blur-sm 
-               text-green hover:text-white"
+           hover:border-green/50 transition-colors backdrop-blur-sm 
+           text-green hover:text-white"
             >
               Book a Meeting
             </a>

@@ -45,10 +45,10 @@ export default function Home() {
         <header className="py-6 px-4 flex justify-between items-center bg-black">
           <div className="flex items-center space-x-2">
             <Image
-              src="/KW.png" // This should be the same image path you're using in the About section
+              src="/KG.png" // This should be the same image path you're using in the About section
               alt="Profile"
-              width={100} // Smaller size for the header
-              height={100} // Smaller size for the header
+              width={130} // Smaller size for the header
+              height={130} // Smaller size for the header
               className="rounded-full" // Makes the image circular like your larger one
             />
           </div>
@@ -57,21 +57,21 @@ export default function Home() {
               <li>
                 <a
                   href="/projects"
-                  className="text-lg text-green hover:text-white"
+                  className="text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
+                            hover:border-green/50 transition-colors backdrop-blur-sm 
+                            text-green hover:text-white"
                 >
                   Projects
                 </a>
               </li>
+
               <li>
                 <a
-                  href="/aboutMe"
-                  className="text-lg text-green hover:text-white"
+                  href="/blog"
+                  className="text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
+                            hover:border-green/50 transition-colors backdrop-blur-sm 
+                            text-green hover:text-white"
                 >
-                  About Me
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-lg text-green hover:text-white">
                   Blog
                 </a>
               </li>
@@ -80,7 +80,7 @@ export default function Home() {
                   href="https://calendly.com/daneelkent"
                   target="_blank" // Opens in new tab
                   rel="noopener noreferrer"
-                  className="px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
+                  className="text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
                hover:border-green/50 transition-colors backdrop-blur-sm 
                text-green hover:text-white"
                 >
@@ -98,12 +98,12 @@ export default function Home() {
                 <Image
                   src="/StaffH.png"
                   alt="Profile"
-                  width={120}
-                  height={120}
+                  width={140}
+                  height={140}
                   className="rounded-full"
                 />
               </div>
-              <h1 className="text-5xl font-bold text-green">Kent Daneel</h1>
+              <h1 className="text-6xl font-bold text-green">Kent Daneel</h1>
               <div className="flex space-x-4 items-center">
                 <a
                   href="https://github.com/Springbock99"
@@ -134,22 +134,66 @@ export default function Home() {
 
             <div className="h-10"></div>
 
-            <p className="text-lg mt-2">
-              A Blockchain Developer deeply involved in Distributed Ledger
-              Technologies. Specializing in smart contract development, I am
-              experienced in Solidity, Typescript, Foundry and other essential
-              technologies that are critical to innovative blockchain solutions.
+            <p className="text-2xl mt-2">
+              Blockchain Developer | Solidity | Smart Contract Dev | Web3 | Defi
+              | Typescript | Foundry
             </p>
+            <p className="text-xl mt-2">
+              {
+                "Hi I'm a Blockchain Developer deeply involved in Distributed Ledger Technologies. Specializing in smart contract development, I am experienced in Solidity, Typescript, Foundry and other essential technologies that are critical to innovative blockchain solutions."
+              }
+            </p>
+
+            {/* <div className="flex space-x-4 mt-6"> */}
+            <ul className="flex space-x-2 mt-6 list-none">
+              <div className="h-10"></div>
+              <li>
+                <a
+                  href="/projects"
+                  className="text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
+                            hover:border-green/50 transition-colors backdrop-blur-sm 
+                            text-green hover:text-white"
+                >
+                  Projects
+                </a>
+              </li>
+              <li className="ml-6">
+                <a
+                  href="https://calendly.com/daneelkent"
+                  target="_blank" // Opens in new tab
+                  rel="noopener noreferrer"
+                  className="text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
+               hover:border-green/50 transition-colors backdrop-blur-sm 
+               text-green hover:text-white"
+                >
+                  Book a Meeting
+                </a>
+              </li>
+            </ul>
+            {/* </div> */}
           </div>
         </section>
-        <div className="h-80"></div> {/* This adds 5rem (80px) of space */}
-        <section className="py-10 px-20">
+        <section className="px-20 flex justify-center mb-10">
+          <div className="max-w-4xl w-full">
+            <h2 className="text-2xl font-bold text-green mb-6">
+              Want To Get To Know Me?
+            </h2>
+            <div className="relative pt-[56.25%] bg-gray-900/50 rounded-lg border border-green/20 backdrop-blur-sm">
+              <video
+                className="absolute top-0 left-0 w-full h-full rounded-lg"
+                controls
+                playsInline
+              >
+                <source src="/IMG_8136.MP4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </section>
+        <section className="px-20 flex justify-center">
           {" "}
-          {/* Match the padding with introduction section */}
-          <div className="ml-[17%]">
+          <div className="max-w-6xl fw-full">
             {" "}
-            {/* Match the margin with introduction section */}
-            <h2 className="text-3xl font-bold text-green mb-6">Services</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
               {" "}
               {/* Service boxes with updated styling */}
@@ -157,7 +201,7 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-green">
                   Blockchain Development
                 </h3>
-                <p className="mt-2 text-gray-300">
+                <p className="text-lg mt-2 text-gray-300">
                   Experience in developing secure and efficient smart contracts,
                   with focus on scalability and optimal gas optimization, with
                   future upgradability in mind and sale guard against common
@@ -168,24 +212,58 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-green">
                   DeFi Solutions
                 </h3>
-                <p className="mt-2 text-gray-300">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                <p className="text-lg mt-2 text-gray-300">
+                  First hand experience developing on a compound like Defi
+                  application and helped secure and write tests as well as
+                  Oracle integration. In addition I have some understand of the
+                  Automated Market Maker approach and how it Defi applications
+                  use it.
                 </p>
               </div>
               <div className="p-6 bg-gray-900/50 rounded-lg border border-green/20 hover:border-green/50 transition-colors backdrop-blur-sm">
-                <h3 className="text-xl font-semibold text-green">Tech Stack</h3>
-                <p className="mt-2 text-gray-300">
-                  Solidity, Typescript, Node.js, Rust, JavaScript, Ethers.js,
-                  Express.js, Remix, Hardhat, Foundry, Alchemy, ERC-20, ERC-721,
-                  ERC-1155,ERC-1167, Upgradeable Patterns, React, Next.js,
-                  Wagmi, MySQL, GraphQL
-                </p>
+                <h3 className="text-xl font-semibold text-green mb-4">
+                  Tech Stack
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    "Solidity",
+                    "TypeScript",
+                    "Node.js",
+                    "Rust",
+                    "JavaScript",
+                    "Ethers.js",
+                    "Express.js",
+                    "Remix",
+                    "Hardhat",
+                    "Foundry",
+                    "Alchemy",
+                    "ERC-20",
+                    "ERC-721",
+                    "ERC-1155",
+                    "ERC-1167",
+                    "Upgradeable Patterns",
+                    "React",
+                    "Next.js",
+                    "Wagmi",
+                    "MySQL",
+                    "GraphQL",
+                  ].map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
+                   hover:border-green/50 transition-colors backdrop-blur-sm 
+                   text-green text-sm"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
               <div className="p-6 bg-gray-900/50 rounded-lg border border-green/20 hover:border-green/50 transition-colors backdrop-blur-sm">
                 <h3 className="text-xl font-semibold text-green">
                   Great Team Player
                 </h3>
-                <p className="mt-2 text-gray-300">
+                <p className="text-lg mt-2 text-gray-300">
                   As a former professional IceHockey player I am an absolute
                   team player. Putting in the extra effort when needed and the
                   ability to persevere have become natural aspects of my
@@ -198,6 +276,25 @@ export default function Home() {
         </section>
         {/* Footer */}
       </div>
+      <footer className="py-4 text-center border-t border-green/20 mt-20 bg-gray-900/50 backdrop-blur-sm">
+        {" "}
+        {/* Added background classes */}
+        <div className="flex flex-col items-center space-y-4">
+          <p className="text-2xl text-green">
+            {"Don't hesitate to book a meeting with me!"}
+          </p>
+          <a
+            href="https://calendly.com/daneelkent"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
+           hover:border-green/50 transition-colors backdrop-blur-sm 
+           text-green hover:text-white"
+          >
+            Book a Meeting
+          </a>
+        </div>
+      </footer>
     </div>
   );
 }
