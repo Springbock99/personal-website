@@ -2,7 +2,8 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import HexagonGrid from "../components/HexagonGrid";
-import Link from "next/link";
+import NavBar from "../components/NavBar";
+import { FileDown, Github, Linkedin } from "lucide-react";
 
 export default function About() {
   const [columnCount, setColumnCount] = useState(12);
@@ -43,62 +44,54 @@ export default function About() {
       <div style={{ position: "relative", zIndex: 2 }}>
         {" "}
         <header className="py-6 px-4 flex justify-between items-center bg-black">
-          <div className="flex items-center space-x-2">
-            <Image
-              src="/KG.png" // This should be the same image path you're using in the About section
-              alt="Profile"
-              width={130} // Smaller size for the header
-              height={130} // Smaller size for the header
-              className="rounded-full" // Makes the image circular like your larger one
-            />
-          </div>
-          <nav>
-            <ul className="flex space-x-4">
-              <li>
-                <Link
-                  href="/"
-                  className="text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
-                            hover:border-green/50 transition-colors backdrop-blur-sm 
-                            text-green hover:text-white"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <a
-                  href="/projects"
-                  className="text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
-                            hover:border-green/50 transition-colors backdrop-blur-sm 
-                            text-green hover:text-white"
-                >
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
-                            hover:border-green/50 transition-colors backdrop-blur-sm 
-                            text-green hover:text-white"
-                >
-                  Blog
-                </a>
-              </li>
-              <li className="ml-6">
-                <a
-                  href="https://calendly.com/daneelkent"
-                  target="_blank" // Opens in new tab
-                  rel="noopener noreferrer"
-                  className="text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
-               hover:border-green/50 transition-colors backdrop-blur-sm 
-               text-green hover:text-white"
-                >
-                  Book a Meeting
-                </a>
-              </li>
-            </ul>
-          </nav>
+          <NavBar />
         </header>
+        <section className="flex flex-col items-center md:items-start px-4 md:px-20 py-10">
+          <div className="flex flex-col w-full md:ml-[17%] items-center md:items-start">
+            <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+              <div className="rounded-full p-[3px] bg-green shadow-lg shadow-green/50">
+                <Image
+                  src="/StaffH.png"
+                  alt="Profile"
+                  width={140}
+                  height={140}
+                  className="rounded-full w-32 h-32 md:w-36 md:h-36"
+                />
+              </div>
+              <div className="text-center md:text-left">
+                <h1 className="text-4xl md:text-6xl font-bold text-green">
+                  Kent Daneel
+                </h1>
+                <div className="flex space-x-4 items-center justify-center md:justify-start mt-4">
+                  <a
+                    href="https://github.com/Springbock99"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green hover:text-white transition-colors"
+                  >
+                    <Github size={32} />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/kent-daneel-7639832a7/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green hover:text-white transition-colors"
+                  >
+                    <Linkedin size={32} />
+                  </a>
+                  <a
+                    href="/KentDaneelResume.pdf"
+                    download
+                    className="text-green hover:text-white transition-colors"
+                    title="Download CV"
+                  >
+                    <FileDown size={32} />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         <div className="h-[100px]"></div>
         <main className="flex-1">
           {" "}

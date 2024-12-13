@@ -44,61 +44,6 @@ export default function Home() {
       <div style={{ position: "relative", zIndex: 2 }}>
         {/* Header */}
         <header className="py-6 px-4 flex flex-col md:flex-row justify-between items-center bg-black gap-4">
-          {/* <div className="flex items-center space-x-2">
-            <Image
-              src="/KG.png"
-              alt="Profile"
-              width={130}
-              height={130}
-              className="rounded-full w-20 h-20 md:w-32 md:h-32"
-            />
-          </div> */}
-          {/* <nav className="w-full md:w-auto">
-            <ul className="flex flex-wrap justify-center md:flex-row gap-4 md:gap-6">
-              <li>
-                <a
-                  href="/projects"
-                  className="text-base md:text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
-                            hover:border-green/50 transition-colors backdrop-blur-sm 
-                            text-green hover:text-white"
-                >
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/aboutMe"
-                  className="text-base md:text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
-                            hover:border-green/50 transition-colors backdrop-blur-sm 
-                            text-green hover:text-white"
-                >
-                  About Me
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/blog"
-                  className="text-base md:text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
-                            hover:border-green/50 transition-colors backdrop-blur-sm 
-                            text-green hover:text-white"
-                >
-                  Blog
-                </a>
-              </li>
-              <li className="mt-4 md:mt-0 md:ml-6">
-                <a
-                  href="https://calendly.com/daneelkent"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-base md:text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
-                           hover:border-green/50 transition-colors backdrop-blur-sm 
-                           text-green hover:text-white"
-                >
-                  Book a Meeting
-                </a>
-              </li>
-            </ul>
-          </nav> */}
           <NavBar />
         </header>
 

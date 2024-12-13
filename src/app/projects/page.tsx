@@ -4,10 +4,8 @@ import { ProjectBox } from "../components/ProjectBox";
 import HexagonGrid from "../components/HexagonGrid";
 import { useEffect, useState } from "react";
 import { FileDown, Github, Linkedin } from "lucide-react";
-import Link from "next/link";
-
+import NavBar from "../components/NavBar";
 export default function Projects() {
-  // Your existing columnCount state and useEffect...
   const [columnCount, setColumnCount] = useState(12);
   const size = 80;
   const width = size * Math.sqrt(3);
@@ -23,150 +21,99 @@ export default function Projects() {
     window.addEventListener("resize", updateColumnCount);
     return () => window.removeEventListener("resize", updateColumnCount);
   }, [width]);
+
   return (
     <div className="bg-black text-white min-h-screen">
       {/* Hexagon Background */}
       <div
-        style={
-          {
-            /* your existing hexagon grid styles */
-          }
-        }
+        style={{
+          position: "absolute",
+          inset: 0,
+          overflow: "hidden",
+          zIndex: 0,
+          top: "0",
+          height: "100vh",
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
       >
         <HexagonGrid columnCount={columnCount} size={size} />
       </div>
 
-      <header className="py-6 px-4 flex justify-between items-center bg-black">
-        <div className="flex items-center space-x-2">
-          <Image
-            src="/KG.png" // This should be the same image path you're using in the About section
-            alt="Profile"
-            width={130} // Smaller size for the header
-            height={130} // Smaller size for the header
-            className="rounded-full" // Makes the image circular like your larger one
-          />
-        </div>
-        <nav>
-          <ul className="flex space-x-4">
-            <li>
-              <Link
-                href="/"
-                className="text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
-                            hover:border-green/50 transition-colors backdrop-blur-sm 
-                            text-green hover:text-white"
-              >
-                Home
-              </Link>
-            </li>
-
-            <li>
-              <a
-                href="#"
-                className="text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
-                            hover:border-green/50 transition-colors backdrop-blur-sm 
-                            text-green hover:text-white"
-              >
-                Blog
-              </a>
-            </li>
-            <li className="ml-6">
-              <a
-                href="https://calendly.com/daneelkent"
-                target="_blank" // Opens in new tab
-                rel="noopener noreferrer"
-                className="text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
-               hover:border-green/50 transition-colors backdrop-blur-sm 
-               text-green hover:text-white"
-              >
-                Book a Meeting
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
-      {/* Content */}
+      {/* Main Content Container */}
       <div style={{ position: "relative", zIndex: 2 }}>
-        {/* Projects Title */}
-        <section className="flex flex-col items-start px-20 py-10">
-          <div className="flex flex-col ml-[17%]">
-            <div className="flex items-center space-x-6">
+        {/* Header */}
+        <header className="py-6 px-4 flex flex-col md:flex-row justify-between items-center bg-black gap-4">
+          <NavBar />
+        </header>
+
+        {/* Projects Title Section */}
+        <section className="flex flex-col items-center md:items-start px-4 md:px-20 py-10">
+          <div className="flex flex-col w-full md:ml-[17%] items-center md:items-start">
+            <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
               <div className="rounded-full p-[3px] bg-green shadow-lg shadow-green/50">
                 <Image
                   src="/StaffH.png"
                   alt="Profile"
                   width={140}
                   height={140}
-                  className="rounded-full"
+                  className="rounded-full w-32 h-32 md:w-36 md:h-36"
                 />
               </div>
-              <h1 className="text-6xl font-bold text-green">
-                My Personal Projects
-              </h1>
-              <div className="flex space-x-4 items-center">
-                <a
-                  href="https://github.com/Springbock99"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-green hover:text-white transition-colors"
-                >
-                  <Github size={32} />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/kent-daneel-7639832a7/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-green hover:text-white transition-colors"
-                >
-                  <Linkedin size={32} />
-                </a>
-                <a
-                  href="/KentDaneelResume.pdf" // Make sure to put your CV PDF in the public folder
-                  download
-                  className="text-green hover:text-white transition-colors"
-                  title="Download CV"
-                >
-                  <FileDown size={32} />
-                </a>
+              <div className="text-center md:text-left">
+                <h1 className="text-4xl md:text-6xl font-bold text-green mb-4 md:mb-0">
+                  My Personal Projects
+                </h1>
+                <div className="flex space-x-4 items-center justify-center md:justify-start mt-4">
+                  <a
+                    href="https://github.com/Springbock99"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green hover:text-white transition-colors"
+                  >
+                    <Github size={32} />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/kent-daneel-7639832a7/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green hover:text-white transition-colors"
+                  >
+                    <Linkedin size={32} />
+                  </a>
+                  <a
+                    href="/KentDaneelResume.pdf"
+                    download
+                    className="text-green hover:text-white transition-colors"
+                    title="Download CV"
+                  >
+                    <FileDown size={32} />
+                  </a>
+                </div>
               </div>
             </div>
 
             <div className="h-10"></div>
 
-            <p className="text-2xl mt-2">
+            <p className="text-xl md:text-2xl mt-2 text-center md:text-left max-w-3xl">
               Take a look at some of my favorite blockchain projects, from DeFi
               protocols to NFT platforms
             </p>
-            {/* <div className="flex space-x-4 mt-6"> */}
-            <ul className="flex space-x-2 mt-6 list-none">
-              <div className="h-10"></div>
-
-              <li className="ml-6">
-                <a
-                  href="https://calendly.com/daneelkent"
-                  target="_blank" // Opens in new tab
-                  rel="noopener noreferrer"
-                  className="text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
-               hover:border-green/50 transition-colors backdrop-blur-sm 
-               text-green hover:text-white"
-                >
-                  Book a Meeting
-                </a>
-              </li>
-            </ul>
-            {/* </div> */}
           </div>
         </section>
 
         {/* Project Boxes */}
-        <section className="px-20">
-          <div className="ml-[17%] flex flex-col gap-12">
+        <section className="px-4 md:px-20">
+          <div className="w-full md:ml-[17%] flex flex-col gap-8 md:gap-12">
+            {/* Your existing ProjectBox components with mobile responsiveness */}
+            {/* Note: The ProjectBox component itself needs to be responsive */}
             <ProjectBox
               title="DeFi & Smart Contract Development Portfolio"
-              description="A comprehensive collection of smart contracts and DeFi protocols showcasing my blockchain development capabilities. This portfolio demonstrates knowledge in implementing secure financial protocols, token standards, and NFT solutions using industry best practices and
-             testing methodologies."
+              description="A comprehensive collection of smart contracts and DeFi protocols showcasing my blockchain development capabilities. This portfolio demonstrates knowledge in implementing secure financial protocols, token standards, and NFT solutions using industry best practices and testing methodologies."
               githubLink="https://github.com/Springbock99/Defi"
-              className="translate-x-0"
+              className="md:translate-x-0"
               techStack={[
                 "Solidity",
                 "Hardhat",
@@ -236,7 +183,6 @@ export default function Projects() {
                 </div>
               }
             />
-
             <ProjectBox
               title="Rad Reptieles - NFT Crafting Platform"
               description="A dynamic NFT platform built on ERC-1155 that enables users to mint, trade, and forge unique reptile NFTs through an innovative burning mechanism. This project showcases advanced smart contract implementation combined with a seamless web3 user interface."
@@ -304,7 +250,6 @@ export default function Projects() {
                 </div>
               }
             />
-
             <ProjectBox
               title="Advanced Upgradeable Smart Contracts"
               description="A sophisticated implementation of upgradeable smart contracts showcasing secure token and NFT upgrade patterns integrated with staking functionality. This project demonstrates professional deployment strategies using TypeScript and comprehensive testing with Foundry."
@@ -383,7 +328,6 @@ export default function Projects() {
                 </div>
               }
             />
-
             <ProjectBox
               title="Portfolio Website - Modern Web3 Developer Portfolio"
               description="A modern, responsive portfolio website showcasing blockchain development projects and professional experience. Built with Next.js and featuring dynamic animations, interactive components, and seamless navigation."
@@ -464,20 +408,18 @@ export default function Projects() {
         </section>
 
         {/* Footer */}
-        <footer className="py-4 text-center border-t border-green/20 mt-20 bg-gray-900/50 backdrop-blur-sm">
-          {" "}
-          {/* Added background classes */}
-          <div className="flex flex-col items-center space-y-4">
-            <p className="text-2xl text-green">
+        <footer className="py-4 px-4 text-center border-t border-green/20 mt-20 bg-gray-900/50 backdrop-blur-sm">
+          <div className="flex flex-col items-center space-y-4 max-w-4xl mx-auto">
+            <p className="text-xl md:text-2xl text-green px-4">
               {"Don't hesitate to book a meeting with me!"}
             </p>
             <a
               href="https://calendly.com/daneelkent"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
-           hover:border-green/50 transition-colors backdrop-blur-sm 
-           text-green hover:text-white"
+              className="text-base md:text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
+                       hover:border-green/50 transition-colors backdrop-blur-sm 
+                       text-green hover:text-white"
             >
               Book a Meeting
             </a>
