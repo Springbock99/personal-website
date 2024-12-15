@@ -42,12 +42,8 @@ export default function Home() {
       </div>
 
       <div style={{ position: "relative", zIndex: 2 }}>
-        {/* Header */}
-        <header className="py-6 px-4 flex flex-col md:flex-row justify-between items-center bg-black gap-4">
-          <NavBar />
-        </header>
+        <NavBar />
 
-        {/* Introduction Section */}
         <section className="flex flex-col items-center md:items-start px-4 md:px-20 py-10">
           <div className="flex flex-col w-full md:ml-[17%] items-center md:items-start">
             <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
@@ -95,12 +91,13 @@ export default function Home() {
 
             <div className="h-10"></div>
 
-            <div className="text-center md:text-left max-w-2xl">
-              <p className="text-xl md:text-2xl mt-2">
+            <div className="text-center md:text-left max-w-7xl">
+              <p className="text-2xl md:text-3xl mt-2 text-green">
                 Blockchain Developer | Solidity | Smart Contract Dev | Web3 |
                 Defi | Typescript | Foundry
               </p>
               <p className="text-lg md:text-xl mt-2">
+                <div className="h-10"></div>
                 {
                   "Hi I'm a Blockchain Developer deeply involved in Distributed Ledger Technologies. Specializing in smart contract development, I am experienced in Solidity, Typescript, Foundry and other essential technologies that are critical to innovative blockchain solutions."
                 }
@@ -155,7 +152,7 @@ export default function Home() {
 
         {/* Service Boxes */}
         <section className="py-10 px-4 md:px-20">
-          <div className="w-full max-w-4xl mx-auto">
+          <div className="w-full max-w-4xl md:max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="p-6 bg-gray-900/50 rounded-lg border border-green/20 hover:border-green/50 transition-colors backdrop-blur-sm">
                 <h3 className="text-xl font-semibold text-green">
@@ -226,7 +223,7 @@ export default function Home() {
                       key={tech}
                       className="px-3 py-1 md:px-4 md:py-2 bg-gray-900/50 rounded-lg border border-green/20 
                                hover:border-green/50 transition-colors backdrop-blur-sm 
-                               text-green text-xs md:text-sm"
+                               text-xs md:text-sm"
                     >
                       {tech}
                     </span>
@@ -241,7 +238,7 @@ export default function Home() {
         <footer className="py-4 px-4 text-center border-t border-green/20 mt-20 bg-gray-900/50 backdrop-blur-sm">
           <div className="flex flex-col items-center space-y-4 max-w-4xl mx-auto">
             <p className="text-xl md:text-2xl text-green px-4">
-              {"Don't hesitate to book a meeting with me!"}
+              {"Feel free to schedule a meeting with me!"}
             </p>
             <a
               href="https://calendly.com/daneelkent"

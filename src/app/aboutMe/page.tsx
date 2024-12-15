@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import HexagonGrid from "../components/HexagonGrid";
 import { FileDown, Github, Linkedin } from "lucide-react";
-import Link from "next/link";
+import NavBar from "../components/NavBar";
 
 export default function About() {
   const [columnCount, setColumnCount] = useState(12);
@@ -42,64 +42,7 @@ export default function About() {
         <HexagonGrid columnCount={columnCount} size={size} />
       </div>
       <div style={{ position: "relative", zIndex: 2 }}>
-        {" "}
-        <header className="py-6 px-4 flex justify-between items-center bg-black">
-          <div className="flex items-center space-x-2">
-            <Image
-              src="/KG.png" // This should be the same image path you're using in the About section
-              alt="Profile"
-              width={130} // Smaller size for the header
-              height={130} // Smaller size for the header
-              className="rounded-full" // Makes the image circular like your larger one
-            />
-          </div>
-          <nav>
-            <ul className="flex space-x-4">
-              <li>
-                <Link
-                  href="/"
-                  className="text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
-                            hover:border-green/50 transition-colors backdrop-blur-sm 
-                            text-green hover:text-white"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <a
-                  href="/projects"
-                  className="text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
-                            hover:border-green/50 transition-colors backdrop-blur-sm 
-                            text-green hover:text-white"
-                >
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
-                            hover:border-green/50 transition-colors backdrop-blur-sm 
-                            text-green hover:text-white"
-                >
-                  Blog
-                </a>
-              </li>
-              <li className="ml-6">
-                <a
-                  href="https://calendly.com/daneelkent"
-                  target="_blank" // Opens in new tab
-                  rel="noopener noreferrer"
-                  className="text-lg px-4 py-2 bg-gray-900/50 rounded-lg border border-green/20 
-               hover:border-green/50 transition-colors backdrop-blur-sm 
-               text-green hover:text-white"
-                >
-                  Book a Meeting
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </header>
+        <NavBar />
         {/* Introduction Section */}
         <section className="flex flex-col items-start px-20 py-10">
           <div className="flex flex-col ml-[17%]">

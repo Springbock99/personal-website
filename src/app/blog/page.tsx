@@ -117,7 +117,7 @@ export default function About() {
           {/* Added background classes */}
           <div className="flex flex-col items-center space-y-4">
             <p className="text-2xl text-green">
-              {"Don't hesitate to book a meeting with me!"}
+              {"Feel free to schedule a meeting with me!"}
             </p>
             <a
               href="https://calendly.com/daneelkent"

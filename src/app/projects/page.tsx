@@ -44,12 +44,7 @@ export default function Projects() {
 
       {/* Main Content Container */}
       <div style={{ position: "relative", zIndex: 2 }}>
-        {/* Header */}
-        <header className="py-6 px-4 flex flex-col md:flex-row justify-between items-center bg-black gap-4">
-          <NavBar />
-        </header>
-
-        {/* Projects Title Section */}
+        <NavBar />
         <section className="flex flex-col items-center md:items-start px-4 md:px-20 py-10">
           <div className="flex flex-col w-full md:ml-[17%] items-center md:items-start">
             <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
@@ -411,7 +406,7 @@ export default function Projects() {
         <footer className="py-4 px-4 text-center border-t border-green/20 mt-20 bg-gray-900/50 backdrop-blur-sm">
           <div className="flex flex-col items-center space-y-4 max-w-4xl mx-auto">
             <p className="text-xl md:text-2xl text-green px-4">
-              {"Don't hesitate to book a meeting with me!"}
+              {"Feel free to schedule a meeting with me!"}
             </p>
             <a
               href="https://calendly.com/daneelkent"
