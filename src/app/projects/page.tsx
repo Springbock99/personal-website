@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { ProjectBox } from "../components/ProjectBox";
+import ProjectBox from "../components/ProjectBox";
 import HexagonGrid from "../components/HexagonGrid";
 import { useEffect, useState } from "react";
 import { FileDown, Github, Linkedin } from "lucide-react";
@@ -45,6 +45,7 @@ export default function Projects() {
       {/* Main Content Container */}
       <div style={{ position: "relative", zIndex: 2 }}>
         <NavBar />
+        {/* Projects Title Section */}
         <section className="flex flex-col items-center md:items-start px-4 md:px-20 py-10">
           <div className="flex flex-col w-full md:ml-[17%] items-center md:items-start">
             <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
@@ -108,7 +109,7 @@ export default function Projects() {
               title="DeFi & Smart Contract Development Portfolio"
               description="A comprehensive collection of smart contracts and DeFi protocols showcasing my blockchain development capabilities. This portfolio demonstrates knowledge in implementing secure financial protocols, token standards, and NFT solutions using industry best practices and testing methodologies."
               githubLink="https://github.com/Springbock99/Defi"
-              className="md:translate-x-0"
+              slideFrom="left"
               techStack={[
                 "Solidity",
                 "Hardhat",
@@ -177,12 +178,13 @@ export default function Projects() {
                   </p>
                 </div>
               }
+              imageUrl="/ERC-20.jpg"
             />
             <ProjectBox
               title="Rad Reptieles - NFT Crafting Platform"
               description="A dynamic NFT platform built on ERC-1155 that enables users to mint, trade, and forge unique reptile NFTs through an innovative burning mechanism. This project showcases advanced smart contract implementation combined with a seamless web3 user interface."
               githubLink="https://github.com/Springbock99/RadReptiles"
-              className="translate-x-[100px]"
+              slideFrom="right"
               techStack={[
                 "Solidity",
                 "Next.js",
@@ -244,12 +246,13 @@ export default function Projects() {
                   </ul>
                 </div>
               }
+              imageUrl="/RadReptiles.jpg"
             />
             <ProjectBox
               title="Advanced Upgradeable Smart Contracts"
               description="A sophisticated implementation of upgradeable smart contracts showcasing secure token and NFT upgrade patterns integrated with staking functionality. This project demonstrates professional deployment strategies using TypeScript and comprehensive testing with Foundry."
               githubLink="https://github.com/Springbock99/UpgradeableContracts"
-              className="translate-x-[200px]"
+              slideFrom="left"
               techStack={[
                 "Solidity",
                 "TypeScript",
@@ -322,12 +325,13 @@ export default function Projects() {
                   </p>
                 </div>
               }
+              imageUrl="/10.jpg"
             />
             <ProjectBox
               title="Portfolio Website - Modern Web3 Developer Portfolio"
               description="A modern, responsive portfolio website showcasing blockchain development projects and professional experience. Built with Next.js and featuring dynamic animations, interactive components, and seamless navigation."
               githubLink="https://github.com/yourusername/portfolio"
-              className="translate-x-[300px]"
+              slideFrom="right"
               techStack={[
                 "Next.js",
                 "TypeScript",
@@ -398,6 +402,7 @@ export default function Projects() {
                   </p>
                 </div>
               }
+              imageUrl="/NoStaffWBeard.jpg"
             />
           </div>
         </section>
@@ -406,7 +411,7 @@ export default function Projects() {
         <footer className="py-4 px-4 text-center border-t border-green/20 mt-20 bg-gray-900/50 backdrop-blur-sm">
           <div className="flex flex-col items-center space-y-4 max-w-4xl mx-auto">
             <p className="text-xl md:text-2xl text-green px-4">
-              {"Feel free to schedule a meeting with me!"}
+              {"Don't hesitate to book a meeting with me!"}
             </p>
             <a
               href="https://calendly.com/daneelkent"
