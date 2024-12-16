@@ -143,7 +143,7 @@ export default function Home() {
                 controls
                 playsInline
               >
-                <source src="/IMG_8136.MP4" type="video/mp4" />
+                <source src="/Introduction.MP4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
