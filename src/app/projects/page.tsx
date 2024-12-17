@@ -325,7 +325,7 @@ export default function Projects() {
                   </p>
                 </div>
               }
-              imageUrl="/10.jpg"
+              imageUrl="/upgradeable.jpg"
             />
             <ProjectBox
               title="Portfolio Website - Modern Web3 Developer Portfolio"
