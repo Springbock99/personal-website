@@ -11,7 +11,7 @@ interface ProjectBoxProps {
   techStack: string[];
   extendedDescription: ReactNode;
   slideFrom: "left" | "right";
-  imageUrl: string; // Add this prop
+  imageUrl: string;
 }
 
 const ProjectBox = ({
@@ -40,25 +40,25 @@ const ProjectBox = ({
 
   const variants = {
     initial: {
-      x: slideFrom === "left" ? -300 : 300,
+      x: slideFrom === "left" ? (isMobile ? -100 : -300) : isMobile ? 100 : 300,
       opacity: 0,
     },
     animate: {
-      x: isMobile ? 0 : slideFrom === "left" ? "5%" : "-5%",
+      x: 0,
       opacity: 1,
     },
   };
 
   return (
     <motion.div
-      className={`mb-12 md:mb-4 overflow-visible ${className}`}
+      className={`${isMobile ? "mb-8" : "mb-4"} overflow-visible ${className}`}
       initial="initial"
       whileInView="animate"
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       variants={variants}
     >
-      <div className="flex justify-center md:justify-start w-full">
+      <div className="flex justify-center w-full">
         <motion.div
           className={`p-6 bg-gray-900/50 rounded-lg border border-green/20 
                      hover:border-green/50 transition-colors backdrop-blur-sm

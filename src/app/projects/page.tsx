@@ -5,6 +5,7 @@ import HexagonGrid from "../components/HexagonGrid";
 import { useEffect, useState } from "react";
 import { FileDown, Github, Linkedin } from "lucide-react";
 import NavBar from "../components/NavBar";
+
 export default function Projects() {
   const [columnCount, setColumnCount] = useState(12);
   const size = 80;
@@ -46,8 +47,8 @@ export default function Projects() {
       <div style={{ position: "relative", zIndex: 2 }}>
         <NavBar />
         {/* Projects Title Section */}
-        <section className="flex flex-col items-center md:items-start px-4 md:px-20 py-10">
-          <div className="flex flex-col w-full md:ml-[17%] items-center md:items-start">
+        <section className="flex flex-col items-center px-4 md:px-20 py-10">
+          <div className="flex flex-col w-full max-w-6xl mx-auto items-center">
             <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
               <div className="rounded-full p-[3px] bg-green shadow-lg shadow-green/50">
                 <Image
@@ -58,11 +59,11 @@ export default function Projects() {
                   className="rounded-full w-32 h-32 md:w-36 md:h-36"
                 />
               </div>
-              <div className="text-center md:text-left">
+              <div className="text-center">
                 <h1 className="text-4xl md:text-6xl font-bold text-green mb-4 md:mb-0">
                   My Personal Projects
                 </h1>
-                <div className="flex space-x-4 items-center justify-center md:justify-start mt-4">
+                <div className="flex space-x-4 items-center justify-center mt-4">
                   <a
                     href="https://github.com/Springbock99"
                     target="_blank"
@@ -93,7 +94,7 @@ export default function Projects() {
 
             <div className="h-10"></div>
 
-            <p className="text-xl md:text-2xl mt-2 text-center md:text-left max-w-3xl">
+            <p className="text-xl md:text-2xl mt-2 text-center max-w-3xl">
               Take a look at some of my favorite blockchain projects, from DeFi
               protocols to NFT platforms
             </p>
@@ -102,7 +103,7 @@ export default function Projects() {
 
         {/* Project Boxes */}
         <section className="px-4 md:px-20">
-          <div className="w-full md:ml-[17%] flex flex-col gap-8 md:gap-12">
+          <div className="w-full max-w-6xl mx-auto flex flex-col gap-8 md:gap-12">
             {/* Your existing ProjectBox components with mobile responsiveness */}
             {/* Note: The ProjectBox component itself needs to be responsive */}
             <ProjectBox
