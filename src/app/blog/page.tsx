@@ -90,10 +90,7 @@ export default function About() {
       </div>
 
       <div style={{ position: "relative", zIndex: 2 }}>
-        <header className="py-6 px-4 flex justify-between items-center bg-black">
-          <NavBar />
-        </header>
-
+        <NavBar />
         {/* Profile Section */}
         <section className="flex flex-col items-center px-4 md:px-20 py-10">
           <div className="flex flex-col w-full max-w-6xl mx-auto items-center">
