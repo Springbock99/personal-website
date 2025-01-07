@@ -55,7 +55,7 @@ export default function About() {
       imageUrl: "/markets.jpg",
       date: "Oct 2, 2024",
       readTime: "4 min",
-      slideFrom: "right" as const,
+      slideFrom: "left" as const,
     },
     {
       title: "Understanding Storage, Memory, and Calldata in Solidity",
