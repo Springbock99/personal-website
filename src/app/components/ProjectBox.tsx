@@ -12,6 +12,7 @@ interface ProjectBoxProps {
   extendedDescription: ReactNode;
   slideFrom: "left" | "right";
   imageUrl: string;
+  imageStyle?: "contain" | "cover";
 }
 
 const ProjectBox = ({
@@ -23,6 +24,7 @@ const ProjectBox = ({
   extendedDescription,
   slideFrom,
   imageUrl,
+  imageStyle = "cover",
 }: ProjectBoxProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isMobile, setIsMobile] = useState(true);
@@ -124,24 +126,37 @@ const ProjectBox = ({
               )}
             </motion.div>
 
-            {/* Image Section */}
+            {/* Image Section with Fixed Aspect Ratio */}
             <motion.div
               className={`${
                 isExpanded ? "w-full md:w-1/3" : "w-full md:w-1/2"
-              } relative`}
+              } relative flex items-center justify-center`}
               layout
             >
-              <div className="aspect-video relative w-full h-full min-h-[200px] rounded-lg overflow-hidden">
-                <Image
-                  src={imageUrl}
-                  alt={`${title} preview`}
-                  fill
-                  className="object-cover"
-                  quality={95}
-                />
+              <div className="relative w-full rounded-lg overflow-hidden">
+                <div className="w-full h-full">
+                  <div
+                    className={`${
+                      imageStyle === "contain" ? "aspect-[4/3]" : "aspect-video"
+                    } relative`}
+                  >
+                    <Image
+                      src={imageUrl}
+                      alt={`${title} preview`}
+                      fill
+                      className={`${
+                        imageStyle === "contain"
+                          ? "object-contain bg-gray-800/50"
+                          : "object-cover"
+                      }`}
+                      quality={95}
+                    />
+                  </div>
+                </div>
               </div>
             </motion.div>
 
+            {/* Expand/Collapse Arrow */}
             <motion.div
               className="absolute top-6 right-6 text-green"
               initial={{ rotate: 0 }}

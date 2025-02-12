@@ -182,6 +182,87 @@ export default function Projects() {
               imageUrl="/ERC-20.jpg"
             />
             <ProjectBox
+              title="Token Lock Smart Contract - Vesting & Team Token Management"
+              description="A secure token locking system built with Solidity, enabling controlled token distribution with time-based vesting. Features a modern Next.js frontend with Wagmi integration for wallet connectivity and contract interactions."
+              githubLink="https://github.com/yourusername/lock-tokens"
+              slideFrom="left"
+              techStack={[
+                "Solidity",
+                "Next.js",
+                "TypeScript",
+                "Wagmi",
+                "Foundry",
+                "Tailwind CSS",
+                "React",
+                "ERC20",
+              ]}
+              extendedDescription={
+                <div className="space-y-4 text-lg">
+                  <p>
+                    A comprehensive token locking system designed for secure
+                    team token distribution and vesting:
+                  </p>
+
+                  <ul className="space-y-4 list-none">
+                    <li className="flex items-start">
+                      <span className="mr-2 text-green">•</span>
+                      <span>
+                        <span className="text-green">Smart Contract:</span>{" "}
+                        Built with Solidity featuring time-based token locking,
+                        owner controls, and secure withdrawal mechanisms.
+                        Includes comprehensive testing using Foundry framework
+                        with full coverage of edge cases and security scenarios.
+                      </span>
+                    </li>
+
+                    <li className="flex items-start">
+                      <span className="mr-2 text-green">•</span>
+                      <span>
+                        <span className="text-green">Web3 Integration:</span>{" "}
+                        Modern frontend built with Next.js and Wagmi hooks for
+                        seamless wallet connectivity and contract interactions.
+                        Features real-time lock status tracking and intuitive
+                        token management interface.
+                      </span>
+                    </li>
+
+                    <li className="flex items-start">
+                      <span className="mr-2 text-green">•</span>
+                      <span>
+                        <span className="text-green">Security Features:</span>{" "}
+                        Implements owner-only token distribution, time-based
+                        locking mechanisms, and secure withdrawal functionality.
+                        Contract includes safeguards against common
+                        vulnerabilities and extensive input validation.
+                      </span>
+                    </li>
+
+                    <li className="flex items-start">
+                      <span className="mr-2 text-green">•</span>
+                      <span>
+                        <span className="text-green">
+                          Development Workflow:
+                        </span>{" "}
+                        Utilized Foundry for contract development and testing,
+                        featuring comprehensive test coverage. Frontend
+                        developed with TypeScript for type safety and Tailwind
+                        CSS for responsive design.
+                      </span>
+                    </li>
+                  </ul>
+
+                  <p className="mt-4">
+                    This project demonstrates proficiency in full-stack Web3
+                    development, combining secure smart contract development
+                    with modern frontend technologies to create a
+                    production-ready token management system.
+                  </p>
+                </div>
+              }
+              imageUrl="/lockTokens.jpg"
+              imageStyle="contain"
+            />
+            <ProjectBox
               title="Rad Reptieles - NFT Crafting Platform"
               description="A dynamic NFT platform built on ERC-1155 that enables users to mint, trade, and forge unique reptile NFTs through an innovative burning mechanism. This project showcases advanced smart contract implementation combined with a seamless web3 user interface."
               githubLink="https://github.com/Springbock99/RadReptiles"
